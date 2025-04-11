@@ -28,12 +28,12 @@ jobs:
         env:
           BASE_URL: /Portfilo-MSI-1/
 
-      - name: Upload production-ready build files
-        uses: actions/upload-artifact@v3
-        with:
-          name: production-files
-          path: dist
-          if-no-files-found: error
+      - - name: Upload build artifact
+          uses: actions/upload-artifact@v3.1.2
+          with:
+                name: build-output
+                path: path/to/artifact
+                if-no-files-found: error
 
   deploy:
     name: Deploy
